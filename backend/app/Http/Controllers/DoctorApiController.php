@@ -14,6 +14,11 @@ class DoctorApiController extends Controller
         $doctors = Doctor::all();
         return response()->json($doctors);
     }
+    public function doctorDetails($id)
+    {
+        $doctor = Doctor::find($id);
+        return response()->json($doctor);
+    }
     public function createDoctor(Request $request)
     {
         $doctor = new Doctor();

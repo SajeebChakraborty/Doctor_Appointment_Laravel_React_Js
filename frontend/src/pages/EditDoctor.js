@@ -51,7 +51,7 @@ export default function EditDoctor(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(input);
-        http.post('/doctor-update/'+id,input)
+        http.patch('/doctor-update/'+id,input)
            .then(response => {
                 
 

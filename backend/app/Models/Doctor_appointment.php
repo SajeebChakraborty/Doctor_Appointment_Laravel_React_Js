@@ -15,6 +15,13 @@ class Doctor_appointment extends Model
         'patient_phone',
         'serial_number',
         'appointment_date',
+        'status',
     ];
+    public function doctor()
+    {
+
+        return $this->belongsTo(Doctor::class);
+
+    }
 
 }

@@ -8,6 +8,8 @@ import Error from './pages/Error';
 import DoctorList from './pages/DoctorList';
 import AddDoctor from './pages/AddDoctor';
 import EditDoctor from './pages/EditDoctor';
+import AppointmentList from './pages/AppointmentList';
+import AddAppointment from './pages/AddAppointment';
 
 function App() {
   return (
@@ -40,6 +42,9 @@ function App() {
                 <Route path="/doctor-list" element={<DoctorList />} />
                 <Route path="/add-doctor" element={<AddDoctor />} />
                 <Route path="/edit-doctor/:id" element={<EditDoctor />} />
+                <Route path="/appointment-list" element={<AppointmentList />} />
+                <Route path="/appointment-add/:id" element={<AddAppointment />} />
+
                 <Route path="*" element={<Error />} />
 
 

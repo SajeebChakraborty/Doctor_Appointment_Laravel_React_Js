@@ -24,14 +24,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/doctor-list', 'App\Http\Controllers\DoctorApiController@doctorList');
 Route::post('/add-doctor/process', 'App\Http\Controllers\DoctorApiController@createDoctor');
+Route::get('/doctor/{id}', 'App\Http\Controllers\DoctorApiController@doctorDetails');
 Route::get('/doctor-edit/{id}', 'App\Http\Controllers\DoctorApiController@editDoctor');
-Route::post('/doctor-update/{id}', 'App\Http\Controllers\DoctorApiController@updateDoctor');
+Route::patch('/doctor-update/{id}', 'App\Http\Controllers\DoctorApiController@updateDoctor');
 Route::delete('/doctor-delete/{id}', 'App\Http\Controllers\DoctorApiController@deleteDoctor');
 
 Route::get('/information', 'App\Http\Controllers\HomeApiController@information');
 
 Route::get('/appointment-list', 'App\Http\Controllers\AppointmentApiController@appointmentList');
-Route::post('/appointment-add/process', 'App\Http\Controllers\AppointmentApiController@createAppointment');
-Route::get('/appointment-edit/{id}', 'App\Http\Controllers\AppointmentApiController@editAppointment');
-Route::post('/appointment-update/{id}', 'App\Http\Controllers\AppointmentApiController@updateAppointment');
-Route::delete('/appointment-delete/{id}', 'App\Http\Controllers\AppointmentApiController@deleteAppointment');
+Route::post('/appointment-add/process/{id}', 'App\Http\Controllers\AppointmentApiController@createAppointment');
+Route::patch('/appointment-cancel/{id}', 'App\Http\Controllers\AppointmentApiController@cancelAppointment');

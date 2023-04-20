@@ -43,6 +43,7 @@ export default function DoctorList() {
         <br></br>
         <br></br>
         <h2>Doctor List</h2>
+        <br></br>
         <table className="table table-striped">
             <thead>
                 <tr>

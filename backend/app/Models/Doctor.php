@@ -13,5 +13,11 @@ class Doctor extends Model
         'name',
         'phone',
     ];
+    public function doctor_appointments()
+    {
+
+        return $this->many(Doctor_appointments::class);
+
+    }
 
 }
