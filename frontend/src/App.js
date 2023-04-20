@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Link} from 'react-router-dom';
+import {Link, Route,Routes} from 'react-router-dom';
+
+import Home from './pages/Home';
+import Error from './pages/Error';
+import DoctorList from './pages/DoctorList';
+import AddDoctor from './pages/AddDoctor';
+import EditDoctor from './pages/EditDoctor';
 
 function App() {
   return (
@@ -18,15 +24,28 @@ function App() {
                     <Link to={"/"} className='nav-link'>Home</Link>
                   </li>
                   <li className="nav-item">
-                    <Link to={"/"} className='nav-link'>Doctor's List</Link>
+                    <Link to={"/doctor-list"} className='nav-link'>Doctor's List</Link>
                   </li>
                   <li className="nav-item">
-                    <Link to={"/"} className='nav-link'>Appointment List</Link>
+                    <Link to={"/appointment-list"} className='nav-link'>Appointment List</Link>
                   </li>
                 </ul>
               </div>
             </div>
             </nav>
+            <div className="container mt-3">
+              <Routes>
+
+                <Route path="/" element={<Home />} />
+                <Route path="/doctor-list" element={<DoctorList />} />
+                <Route path="/add-doctor" element={<AddDoctor />} />
+                <Route path="/edit-doctor/:id" element={<EditDoctor />} />
+                <Route path="*" element={<Error />} />
+
+
+              </Routes>
+
+            </div>
 
     </div>
   );

@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Doctor_appointment;
+use App\Models\Doctor;
+
 class AppointmentApiController extends Controller
 {
     
-    public function showAppointmentList()
+    public function appointmentList()
     {
         $appointments = Doctor_appointment::all();
         return response()->json($appointments);
