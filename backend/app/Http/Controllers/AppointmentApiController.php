@@ -66,5 +66,28 @@ class AppointmentApiController extends Controller
         $message = "Appointment cancelled successfully";
         return response()->json($message,200);
     }
+    public function appointmentSearch(Request $request)
+    {
+        if($request->date==NULL)
+        {
+            $appointments = Doctor_appointment::with('doctor')->where('patient_name','like','%'.$request->name.'%')->get();
+        }
+        else if($request->name==NULL)
+        {
+            $appointments = Doctor_appointment::with('doctor')->where('appointment_date',$request->date)->get();
+
+        }
+        else if($request->name!=NULL && $request->date!=NULL)
+        {
+            $appointments = Doctor_appointment::with('doctor')->where('patient_name','like','%'.$request->name.'%')->where('appointment_date',$request->date)->get();
+        }
+        else
+        {
+            $appointments = Doctor_appointment::with('doctor')->get();
+        }
+
+        return response()->json($appointments,200);
+        
+    }
 
 }

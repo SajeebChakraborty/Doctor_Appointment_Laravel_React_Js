@@ -32,5 +32,6 @@ Route::delete('/doctor-delete/{id}', 'App\Http\Controllers\DoctorApiController@d
 Route::get('/information', 'App\Http\Controllers\HomeApiController@information');
 
 Route::get('/appointment-list', 'App\Http\Controllers\AppointmentApiController@appointmentList');
+Route::post('/appointment-search', 'App\Http\Controllers\AppointmentApiController@appointmentSearch');
 Route::post('/appointment-add/process/{id}', 'App\Http\Controllers\AppointmentApiController@createAppointment');
 Route::patch('/appointment-cancel/{id}', 'App\Http\Controllers\AppointmentApiController@cancelAppointment');
