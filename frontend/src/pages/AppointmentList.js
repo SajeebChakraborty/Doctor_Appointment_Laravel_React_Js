@@ -10,7 +10,6 @@ export default function AppointmentList() {
   const[input,setInput] = useState({});
 
   useEffect(() => {
-
     document.title = "Appointment List";
     fetchAppointments();
 
@@ -79,7 +78,7 @@ export default function AppointmentList() {
     <div>
 
         <br></br>
-        
+
         <br></br>
         <h2>Appointment List</h2>
         <br></br>
