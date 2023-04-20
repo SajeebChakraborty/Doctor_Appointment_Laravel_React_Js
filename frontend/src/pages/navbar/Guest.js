@@ -9,7 +9,7 @@ export default function Guest() {
   return (
     <div>
 
-<nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+            <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
                 <ul className="navbar-nav">
                     <li>
 
@@ -19,9 +19,9 @@ export default function Guest() {
                     <li className="nav-item">
                         <Link className="nav-link" to="/">Login</Link>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <Link className="nav-link" to="/register">Register</Link>
-                    </li>
+                    </li> */}
 
                 </ul>
 
@@ -29,7 +29,7 @@ export default function Guest() {
             <div className="container">
                 <Routes>
                     <Route path="/" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
+                    {/* <Route path="/register" element={<Register />} /> */}
                 </Routes>
             </div>
       

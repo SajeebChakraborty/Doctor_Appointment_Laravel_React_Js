@@ -1,6 +1,8 @@
 import { useState } from "react"
 import AuthUser from './AuthUser';
 
+import { useEffect } from "react";
+
 export default function Login() {
     const {http,setToken} = AuthUser();
     const [email,setEmail] = useState();
@@ -12,6 +14,12 @@ export default function Login() {
             setToken(res.data.user,res.data.access_token);
         })
     }
+
+    useEffect(() => {
+
+        document.title = "Login";
+
+    }, [])
 
     return(
         <div className="row justify-content-center pt-5">
