@@ -91,6 +91,7 @@ export default function AppointmentList() {
             <label htmlFor="name">Appointment Date</label>
             <input type="date" class="form-control" name="date" value={input.date || ''} onChange={handleChange} placeholder="Appointment Date"/>
             </div>
+            
             <div className="col-lg-4">
             <button className="btn btn-primary btn-large"  onClick={handleSubmit}  style={{ marginTop:"25px" }}>Search</button>
             </div>
