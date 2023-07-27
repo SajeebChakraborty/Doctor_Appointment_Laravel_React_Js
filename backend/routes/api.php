@@ -37,6 +37,8 @@ Route::post('/appointment-search', 'App\Http\Controllers\AppointmentApiControlle
 Route::post('/appointment-add/process/{id}', 'App\Http\Controllers\AppointmentApiController@createAppointment');
 Route::patch('/appointment-cancel/{id}', 'App\Http\Controllers\AppointmentApiController@cancelAppointment');
 
+Route::get('/doctors/free-time/{date}', 'App\Http\Controllers\SlotController@freeTime');
+
 Route::post('/login', 'App\Http\Controllers\AuthController@login');
 Route::post('/register', 'App\Http\Controllers\AuthController@register');
 
@@ -46,9 +48,8 @@ Route::group([
 
 ], function ($router) {
 
-  
+
     Route::post('/logout', 'App\Http\Controllers\AuthController@logout');
     Route::post('/refresh', 'App\Http\Controllers\AuthController@refresh');
     Route::post('/me', 'App\Http\Controllers\AuthController@me');
-
 });
